@@ -113,6 +113,18 @@
         data: data,
         options: options,
       });
+
+      //Gesamtsumme ausrechnen
+      <p id="total-income" style="color: rgba(0, 173, 181, 1); font-size: 1.5rem; margin-top: 20px;"></p>
+
+
+  // Gesamtsumme berechnen
+  const totalIncome = data.datasets[0].data.reduce((sum, value) => sum + value, 0);
+
+  // Ergebnis in HTML anzeigen
+  document.getElementById("total-income").textContent = `Gesamte Einnahmen: € ${totalIncome}`;
+
+
     </script>
   </body>
 </html>
